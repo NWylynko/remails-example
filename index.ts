@@ -12,15 +12,16 @@ if (!apiKey) {
 // this just provides some backup in-case some don't work for whatever reason
 const emails = EmailProviders([
   SendGrid({ apiKey })
-])
+]);
 
-const main = async () => {
+(async () => {
 
   const to = "nick@wylynko.com"
   const from = "nick1014375@gmail.com"
   const template = "resetPassword"
 
   // steps here include
+  // - loading the templates
   // - run fetch function
   // - run subject function
   // - get html from react-dom
@@ -30,6 +31,4 @@ const main = async () => {
   await emails.send(email)
 
   console.log(email)
-}
-
-main()
+})();

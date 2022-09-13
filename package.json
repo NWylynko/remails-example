@@ -4,7 +4,6 @@
   "description": "",
   "main": "dist/index.js",
   "scripts": {
-    "dev": "remails --dev",
     "start": "remails --start",
     "build": "remails --build"
   },
@@ -16,7 +15,7 @@
     "dotenv": "^16.0.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "remails": "file:../../nwylynko/remails"
+    "remails": "^0.1.0"
   },
   "devDependencies": {
     "@tsconfig/node18": "^1.0.1",
