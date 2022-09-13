@@ -7,14 +7,14 @@ if (!apiKey) {
   throw new Error(`the environment variable SENDGRID_API_KEY is not set`)
 }
 
-// email providers will go through each provider from top to bottom
-// if the first one fails it goes to the next and so on
-// this just provides some backup in-case some don't work for whatever reason
-const emails = EmailProviders([
-  SendGrid({ apiKey })
-]);
-
 (async () => {
+
+  // email providers will go through each provider from top to bottom
+  // if the first one fails it goes to the next and so on
+  // this just provides some backup in-case some don't work for whatever reason
+  const emails = await EmailProviders([
+    SendGrid({ apiKey })
+  ]);
 
   const to = "nick@wylynko.com"
   const from = "nick1014375@gmail.com"
