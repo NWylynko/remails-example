@@ -27,7 +27,9 @@ const ResetPassword: EmailTemplate<Fetch> = ({ data }) => {
       <h2>Reset your password</h2>
       <span>Someone requested for your accounts password to be reset</span>
       <span>If that is you then please click this link to continue</span>
-      <span>Your Email is {email.to}</span>
+      <span>
+        Your Email is <a href={`mailto:${email.to}`}>{email.to}</a>
+      </span>
       <span>The Subject of the email is {email.subject}</span>
       <span>This email was sent from {email.from}</span>
       <pre>{JSON.stringify(data, null, 2)}</pre>
